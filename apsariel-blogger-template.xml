@@ -1,0 +1,789 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta content='width=device-width, initial-scale=1, minimum-scale=1' name='viewport'/>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <meta charset='UTF-8'/>
+    <title><data:blog.pageTitle/></title>
+    <b:include data='blog' name='all-head-content'/>
+    <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : "Apsariel is a premium women fashion destination built for Pinterest-worthy inspiration, luxury blog storytelling, affiliate shopping, and digital fashion products."' name='description'/>
+    <meta content='max-image-preview:large' name='robots'/>
+    <meta content='Apsariel' name='author'/>
+    <meta content='index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' name='robots'/>
+    <meta content='article' property='og:type'/>
+    <meta expr:content='data:blog.pageTitle' property='og:title'/>
+    <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : "Apsariel curates modern women fashion, beauty, luxe styling edits, affiliate finds, and Pinterest-inspired looks."' property='og:description'/>
+    <meta expr:content='data:blog.url' property='og:url'/>
+    <meta content='Apsariel' property='og:site_name'/>
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+    <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : "Pinterest-ready luxury fashion, premium blog content, affiliate product finds, and digital style inspiration from Apsariel."' name='twitter:description'/>
+    <meta content='@apsariel01' name='twitter:creator'/>
+    <meta content='Apsariel' name='application-name'/>
+    <meta content='true' property='pinterest-rich-pin'/>
+    <b:if cond='data:blog.pageType == "item"'>
+      <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+      <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
+    <b:else/>
+      <meta content='https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80' property='og:image'/>
+      <meta content='https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80' name='twitter:image'/>
+    </b:if>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap' rel='stylesheet'/>
+    <script type='application/ld+json'>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Apsariel",
+        "url": "<data:blog.homepageUrl/>",
+        "description": "Apsariel curates premium women fashion, beauty inspiration, luxury affiliate finds, and Pinterest-first editorial content.",
+        "sameAs": [
+          "https://instagram.com/apsariel01",
+          "https://pinterest.com/apsariel01"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Apsariel",
+          "url": "<data:blog.homepageUrl/>"
+        }
+      }
+    </script>
+    <b:skin><![CDATA[
+/*
+-----------------------------------------------
+Apsariel Premium Blogger Theme
+-----------------------------------------------
+Variable definitions:
+<Variable name="bgColor" description="Background Color" type="color" default="#e9e5cd" value="#e9e5cd"/>
+<Variable name="primaryColor" description="Primary Accent" type="color" default="#a98349" value="#a98349"/>
+<Variable name="secondaryAccent" description="Secondary Accent" type="color" default="#c7b395" value="#c7b395"/>
+<Variable name="surfaceColor" description="Surface Color" type="color" default="#fffdf7" value="#fffdf7"/>
+<Variable name="textColor" description="Main Text Color" type="color" default="#201a16" value="#201a16"/>
+<Variable name="mutedColor" description="Muted Text Color" type="color" default="#76685b" value="#76685b"/>
+<Variable name="headingFont" description="Heading Font" type="font" default="normal 700 16px 'Playfair Display', serif" value="normal 700 16px 'Playfair Display', serif"/>
+<Variable name="bodyFont" description="Body Font" type="font" default="normal 400 16px 'Poppins', sans-serif" value="normal 400 16px 'Poppins', sans-serif"/>
+*/
+:root{
+--bg:$bgColor;--surface:$surfaceColor;--surface-2:rgba(255,253,247,.72);--text:$textColor;--muted:$mutedColor;--primary:$primaryColor;--primary-strong:#8d6a38;--gold:$secondaryAccent;--gold-soft:rgba(199,179,149,.25);--line:rgba(86,67,46,.12);--line-strong:rgba(86,67,46,.2);--shadow-sm:0 12px 28px rgba(76,58,37,.08);--shadow-md:0 20px 48px rgba(76,58,37,.12);--shadow-lg:0 32px 90px rgba(52,38,21,.18);--radius-sm:16px;--radius-md:24px;--radius-lg:34px;--radius-pill:999px;--container:1340px;--sidebar:330px;--header-h:84px;--hero-grad:linear-gradient(180deg,rgba(16,13,10,.04) 0%,rgba(16,13,10,.6) 100%);--accent-grad:linear-gradient(135deg,#d2b07a 0%,#a98349 50%,#8b6941 100%);--soft-grad:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,249,240,.72));--dark-bg:#11100f;--dark-surface:#1b1815;--dark-surface-2:rgba(36,31,27,.88);--dark-line:rgba(255,255,255,.08);--dark-text:#f5efe7;--dark-muted:#d0c2b0;--heading-font:$headingFont;--body-font:$bodyFont}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:var(--body-font);line-height:1.72;color:var(--text);background:radial-gradient(circle at 0% 0%,rgba(255,255,255,.6) 0,transparent 28%),radial-gradient(circle at 100% 12%,rgba(199,179,149,.22) 0,transparent 24%),linear-gradient(180deg,#f4f1df 0%,var(--bg) 24%,#f3ede3 55%,#efe7d9 100%);overflow-x:hidden;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+body.menu-open,body.search-open{overflow:hidden}
+body.dark-mode{--bg:var(--dark-bg);--surface:var(--dark-surface);--surface-2:var(--dark-surface-2);--text:var(--dark-text);--muted:var(--dark-muted);--line:var(--dark-line);--line-strong:rgba(255,255,255,.14);--shadow-sm:0 14px 30px rgba(0,0,0,.2);--shadow-md:0 22px 50px rgba(0,0,0,.32);--shadow-lg:0 36px 95px rgba(0,0,0,.45);background:radial-gradient(circle at 0% 0%,rgba(212,176,122,.12) 0,transparent 25%),radial-gradient(circle at 100% 0%,rgba(255,255,255,.04) 0,transparent 20%),linear-gradient(180deg,#0f0e0d 0%,#151311 100%)}
+img{max-width:100%;display:block;border:0}
+a{color:inherit;text-decoration:none;transition:color .3s ease,transform .3s ease,opacity .3s ease,border-color .3s ease,background .3s ease}
+button,input,textarea,select{font:inherit}
+button{border:0;background:none;padding:0;cursor:pointer}
+svg{display:block}
+h1,h2,h3,h4,h5,h6,.heading,.section-title,.brand-wordmark{font:var(--heading-font);letter-spacing:-.03em;line-height:1.12;margin:0}
+p{margin:0 0 1rem;color:var(--muted)}
+blockquote{margin:2.2rem 0;padding:1.4rem 1.6rem 1.4rem 1.9rem;border-left:4px solid var(--primary);border-radius:0 var(--radius-sm) var(--radius-sm) 0;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,246,236,.65));box-shadow:var(--shadow-sm);font:600 1.06rem/1.8 "Playfair Display",serif;color:var(--text)}
+body.dark-mode blockquote{background:rgba(255,255,255,.03)}
+::selection{background:rgba(169,131,73,.25)}
+.container{width:min(100%,var(--container));margin:0 auto;padding:0 22px}
+.page-glow{position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(circle at 18% 10%,rgba(255,255,255,.35) 0,transparent 22%),radial-gradient(circle at 90% 14%,rgba(199,179,149,.2) 0,transparent 18%),radial-gradient(circle at 78% 82%,rgba(169,131,73,.16) 0,transparent 18%)}
+.noise-overlay{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%2384653f' fill-opacity='.18'%3E%3Ccircle cx='12' cy='18' r='1'/%3E%3Ccircle cx='60' cy='26' r='1'/%3E%3Ccircle cx='110' cy='20' r='1'/%3E%3Ccircle cx='30' cy='76' r='1'/%3E%3Ccircle cx='82' cy='64' r='1'/%3E%3Ccircle cx='130' cy='92' r='1'/%3E%3Ccircle cx='18' cy='124' r='1'/%3E%3Ccircle cx='64' cy='114' r='1'/%3E%3Ccircle cx='100' cy='136' r='1'/%3E%3C/g%3E%3C/svg%3E")}
+.progress-bar{position:fixed;inset:0 auto auto 0;height:3px;width:0;z-index:2000;background:var(--accent-grad);box-shadow:0 8px 20px rgba(169,131,73,.45)}
+.announcement-bar{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.45);background:linear-gradient(90deg,rgba(255,250,240,.85),rgba(246,237,224,.78),rgba(255,250,240,.85));font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;color:var(--muted)}
+body.dark-mode .announcement-bar{background:rgba(255,255,255,.03);border-color:var(--line)}
+.site-header{position:sticky;top:0;z-index:1100;backdrop-filter:blur(18px);background:rgba(255,252,246,.72);border-bottom:1px solid rgba(255,255,255,.5);box-shadow:0 8px 28px rgba(68,52,32,.08)}
+body.dark-mode .site-header{background:rgba(19,17,15,.72);border-color:var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:var(--header-h)}
+.logo-wrap{display:flex;align-items:center;gap:12px;min-width:0}
+.logo-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(232,221,201,.95));box-shadow:var(--shadow-sm);border:1px solid rgba(255,255,255,.65);color:var(--primary)}
+body.dark-mode .logo-mark{background:rgba(255,255,255,.06);border-color:var(--line)}
+.logo-copy{display:flex;flex-direction:column;gap:3px}
+.brand-wordmark{font-size:1.75rem;letter-spacing:.18em;text-transform:uppercase}
+.brand-tagline{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.main-nav{display:flex;align-items:center;gap:10px}
+.nav-menu{display:flex;align-items:center;gap:4px;margin:0;padding:0;list-style:none}
+.nav-link{position:relative;padding:12px 16px;border-radius:var(--radius-pill);font-size:.84rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.nav-link:after{content:"";position:absolute;left:18px;right:18px;bottom:8px;height:2px;border-radius:999px;background:var(--accent-grad);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.nav-link:hover,.nav-link:focus-visible{color:var(--text);background:rgba(255,255,255,.4)}
+.nav-link:hover:after,.nav-link:focus-visible:after{transform:scaleX(1)}
+body.dark-mode .nav-link:hover,body.dark-mode .nav-link:focus-visible{background:rgba(255,255,255,.04)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.icon-btn,.social-link{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.58);box-shadow:var(--shadow-sm);color:var(--text)}
+body.dark-mode .icon-btn,body.dark-mode .social-link{background:rgba(255,255,255,.05);border-color:var(--line)}
+.icon-btn:hover,.social-link:hover{transform:translateY(-2px);color:var(--primary);box-shadow:var(--shadow-md)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;padding:0 11px;border-radius:16px}
+.menu-toggle span{width:22px;height:2px;background:currentColor;border-radius:999px;transition:transform .3s ease,opacity .3s ease}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.search-overlay{position:fixed;inset:0;z-index:1800;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(14,12,10,.78);backdrop-filter:blur(18px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease}
+.search-overlay.active{opacity:1;visibility:visible}
+.search-shell{position:relative;width:min(100%,820px);transform:translateY(24px) scale(.98);transition:transform .35s ease}
+.search-overlay.active .search-shell{transform:translateY(0) scale(1)}
+.search-form{display:flex;gap:10px;padding:12px;border-radius:32px;background:rgba(255,255,255,.96);box-shadow:var(--shadow-lg)}
+.search-form input{flex:1;min-width:0;border:0;outline:0;background:transparent;padding:14px 18px;font-size:1rem;color:#14110f}
+.search-form button{padding:0 22px;border-radius:999px;background:var(--accent-grad);color:#fff;font-weight:600}
+.search-close{position:absolute;top:-64px;right:0;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff}
+.site-main{padding:0 0 60px}
+.main-wrapper{display:flex;align-items:flex-start;gap:40px;padding:34px 0 0}
+.content-area{flex:1;min-width:0}
+.sidebar-area{width:var(--sidebar);flex:0 0 var(--sidebar)}
+.sidebar{position:sticky;top:calc(var(--header-h) + 24px)}
+.hero{position:relative;overflow:hidden;border-radius:40px;background:var(--surface-2);border:1px solid rgba(255,255,255,.58);box-shadow:var(--shadow-lg);margin:0 0 34px}
+body.dark-mode .hero{border-color:var(--line)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);align-items:stretch}
+.hero-media{position:relative;min-height:640px;overflow:hidden}
+.hero-media:after{content:"";position:absolute;inset:0;background:var(--hero-grad)}
+.hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1s ease}
+.hero:hover .hero-media img{transform:scale(1.07)}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:44px;color:#fff;max-width:720px}
+.eyebrow,.post-category{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.15);backdrop-filter:blur(12px);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.18)}
+.hero-title{font-size:clamp(2.2rem,4.8vw,4.8rem);margin:18px 0 14px}
+.hero-desc{max-width:520px;margin:0 0 24px;color:rgba(255,255,255,.82);font-size:1rem}
+.button-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.primary-btn,.secondary-btn,.ghost-btn,.read-btn,.shop-btn,.newsletter-btn,.comment-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:999px;font-size:.86rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;box-shadow:var(--shadow-sm)}
+.primary-btn,.shop-btn,.newsletter-btn,.comment-btn{background:var(--accent-grad);color:#fff}
+.secondary-btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.ghost-btn,.read-btn{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.45);color:var(--text)}
+body.dark-mode .ghost-btn,body.dark-mode .read-btn{background:rgba(255,255,255,.06);border-color:var(--line);color:var(--dark-text)}
+.primary-btn:hover,.secondary-btn:hover,.ghost-btn:hover,.read-btn:hover,.shop-btn:hover,.newsletter-btn:hover,.comment-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.hero-side{display:grid;gap:18px;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,.56),rgba(255,248,238,.9))}
+body.dark-mode .hero-side{background:rgba(255,255,255,.02)}
+.hero-panel,.section-shell,.post-card,.post-article,.sidebar-widget,.product-card,.pin-card,.related-card,.footer-card,.archive-header{border-radius:30px;background:var(--surface-2);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.55);box-shadow:var(--shadow-md)}
+body.dark-mode .hero-panel,body.dark-mode .section-shell,body.dark-mode .post-card,body.dark-mode .post-article,body.dark-mode .sidebar-widget,body.dark-mode .product-card,body.dark-mode .pin-card,body.dark-mode .related-card,body.dark-mode .footer-card,body.dark-mode .archive-header{border-color:var(--line)}
+.hero-panel{padding:22px}
+.mini-kicker{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+.hero-panel h3{font-size:1.55rem;margin:12px 0}
+.hero-panel p:last-child{margin-bottom:0}
+.stats-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat-card{padding:18px;border-radius:22px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.6)}
+body.dark-mode .stat-card{background:rgba(255,255,255,.03);border-color:var(--line)}
+.stat-card strong{display:block;font:700 1.3rem/1 "Playfair Display",serif;color:var(--text);margin-bottom:8px}
+.homepage-section{margin:0 0 34px}
+.section-shell{padding:26px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 24px}
+.section-head p{max-width:620px;margin:10px 0 0}
+.section-title{font-size:clamp(1.75rem,3vw,2.6rem)}
+.editor-grid,.trend-grid,.beauty-grid,.footer-preview-grid{display:grid;gap:18px}
+.editor-grid,.trend-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.beauty-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.editor-card,.trend-card,.beauty-card{position:relative;overflow:hidden;border-radius:26px;min-height:220px;display:flex;align-items:flex-end;padding:22px;color:#fff;background:#1e1a18}
+.editor-card:after,.trend-card:after,.beauty-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.68))}
+.editor-card img,.trend-card img,.beauty-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .75s ease}
+.editor-card:hover img,.trend-card:hover img,.beauty-card:hover img{transform:scale(1.06)}
+.editor-card .overlay,.trend-card .overlay,.beauty-card .overlay{position:relative;z-index:1}
+.editor-card h3,.trend-card h3,.beauty-card h3{font-size:1.45rem;margin:8px 0 0}
+.post-feed-wrap{display:block}
+.archive-header{padding:24px;margin:0 0 26px}
+.archive-header h1{font-size:clamp(2rem,4vw,3.3rem)}
+.archive-header p{margin:.8rem 0 0;max-width:640px}
+.pinterest-grid{columns:3 290px;column-gap:22px}
+.post-card{display:inline-block;width:100%;margin:0 0 22px;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.post-card:hover,.product-card:hover,.pin-card:hover,.related-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.post-thumb,.product-image,.pin-thumb,.related-thumb,.footer-preview{position:relative;overflow:hidden}
+.post-thumb{aspect-ratio:2/3;background:#d7d0c3}
+.post-thumb img,.product-image img,.pin-thumb img,.related-thumb img,.footer-preview img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .6s ease}
+.post-card:hover .post-thumb img,.product-card:hover .product-image img,.pin-card:hover .pin-thumb img,.related-card:hover .related-thumb img,.footer-preview:hover img{transform:scale(1.06);filter:saturate(1.06)}
+.pin-it-button{position:absolute;top:14px;right:14px;z-index:4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(230,0,35,.92);color:#fff;box-shadow:0 14px 30px rgba(230,0,35,.22);opacity:0;transform:translateY(8px) scale(.92);transition:opacity .25s ease,transform .25s ease}
+.post-thumb:hover .pin-it-button,.post-featured-image:hover .pin-it-button,.pin-thumb:hover .pin-it-button{opacity:1;transform:translateY(0) scale(1)}
+.post-body-card{padding:22px}
+.card-label{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--gold-soft);color:var(--primary);margin:0 0 12px}
+.post-card h2,.post-card h3,.related-card h3{font-size:1.3rem;margin:0 0 10px}
+.excerpt{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:.94rem;margin:0 0 16px}
+.meta-row{display:flex;align-items:center;flex-wrap:wrap;gap:14px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.post-article{padding:30px;margin:0 0 28px}
+.post-header{margin:0 0 22px}
+.post-header h1{font-size:clamp(2.4rem,5vw,4.5rem);margin:16px 0}
+.post-header .meta-row{font-size:.78rem}
+.post-featured-image{position:relative;overflow:hidden;border-radius:28px;margin:0 0 24px;background:#d7d0c3}
+.post-featured-image img{width:100%;height:auto;max-height:680px;object-fit:cover}
+.affiliate-disclosure{display:flex;gap:12px;align-items:flex-start;padding:18px 20px;margin:0 0 26px;border-radius:22px;background:linear-gradient(135deg,rgba(255,245,226,.95),rgba(248,236,214,.95));border:1px solid rgba(169,131,73,.14);color:#876338}
+body.dark-mode .affiliate-disclosure{background:rgba(212,176,122,.08);color:#ebd7ba}
+.post-body{font-size:1.04rem;color:var(--muted)}
+.post-body h2,.post-body h3,.post-body h4{font-size:clamp(1.5rem,3vw,2.2rem);margin:2rem 0 1rem;color:var(--text)}
+.post-body p,.post-body li{margin:0 0 1rem}
+.post-body ul,.post-body ol{padding-left:1.2rem;margin:0 0 1.2rem;color:var(--muted)}
+.post-body img{border-radius:24px;margin:1.5rem auto;box-shadow:var(--shadow-md)}
+.post-body a{color:var(--primary);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.social-share{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.social-share .label{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text);margin-right:8px}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;box-shadow:var(--shadow-sm)}
+.share-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.share-btn.pinterest{background:#e60023}
+.share-btn.facebook{background:#1877f2}
+.share-btn.twitter{background:#111}
+.share-btn.whatsapp{background:#25d366}
+.inline-shop-grid,.related-grid,.pin-feed-grid,.product-grid{display:grid;gap:18px}
+.inline-shop-grid,.related-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.inline-shop-grid{margin:24px 0 0}
+.related-card,.pin-card{overflow:hidden}
+.related-thumb{aspect-ratio:4/3;background:#d7d0c3}
+.related-copy,.pin-copy{padding:18px}
+.comments-section{margin:30px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+.comment-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 18px}
+.comment{padding:18px 0;border-top:1px solid var(--line)}
+.comment:first-child{border-top:0}
+.comment-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;flex-wrap:wrap}
+.comment-author{font-weight:600;color:var(--text)}
+.comment-body{color:var(--muted)}
+.sidebar-widget{padding:24px;margin:0 0 22px}
+.widget-title{display:inline-flex;padding-bottom:8px;margin:0 0 18px;font-size:1.22rem;position:relative}
+.widget-title:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;border-radius:999px;background:var(--accent-grad)}
+.about-avatar{width:118px;height:118px;margin:0 auto 16px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.72);box-shadow:var(--shadow-md)}
+.about-widget{text-align:center}
+.follow-stack,.footer-social{display:flex;flex-wrap:wrap;gap:10px}
+.follow-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 18px;border-radius:999px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.6);font-weight:600;box-shadow:var(--shadow-sm)}
+body.dark-mode .follow-btn{background:rgba(255,255,255,.04);border-color:var(--line)}
+.follow-btn:hover{transform:translateY(-2px);color:var(--primary)}
+.popular-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.popular-item:first-child{padding-top:0;border-top:0}
+.popular-thumb{width:84px;height:104px;border-radius:18px;overflow:hidden;flex:0 0 84px;background:#d7d0c3}
+.popular-thumb img{width:100%;height:100%;object-fit:cover}
+.popular-copy h4{font-size:1rem;margin:0 0 6px}
+.category-list,.footer-links{display:grid;gap:10px}
+.category-link,.footer-links a{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:18px;background:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.55);font-size:.92rem;color:var(--muted)}
+body.dark-mode .category-link,body.dark-mode .footer-links a{background:rgba(255,255,255,.04);border-color:var(--line)}
+.category-link:hover,.footer-links a:hover{color:var(--text);transform:translateX(3px)}
+.newsletter-box{padding:22px;border-radius:24px;background:linear-gradient(160deg,rgba(255,250,244,.96),rgba(247,236,220,.96));border:1px solid rgba(169,131,73,.12)}
+body.dark-mode .newsletter-box{background:rgba(212,176,122,.06)}
+.newsletter-box input,.footer-card input{width:100%;height:52px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.9);color:#171311;outline:0;margin:0 0 12px}
+.affiliate-widget{display:grid;gap:16px}
+.affiliate-promo{display:grid;grid-template-columns:108px 1fr;gap:14px;align-items:center}
+.affiliate-promo img{width:108px;height:138px;object-fit:cover;border-radius:20px}
+.price-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 12px}
+.price{font-weight:700;color:var(--text)}
+.old-price{text-decoration:line-through;color:var(--muted);font-size:.9rem}
+.pill-links{display:flex;gap:8px;flex-wrap:wrap}
+.pill-links a{padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.62);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+body.dark-mode .pill-links a{background:rgba(255,255,255,.04);border-color:var(--line)}
+.filter-row{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
+.filter-btn{padding:11px 16px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.58);font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+body.dark-mode .filter-btn{background:rgba(255,255,255,.04);border-color:var(--line)}
+.filter-btn.active,.filter-btn:hover{background:var(--accent-grad);border-color:transparent;color:#fff}
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.product-card{overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;position:relative}
+.product-image{aspect-ratio:2/3;background:#d7d0c3}
+.product-copy{padding:20px}
+.product-copy h3{font-size:1.24rem;margin:0 0 8px}
+.product-copy p{font-size:.92rem}
+.store-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.store-links a{padding:10px 14px;border-radius:999px;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.6)}
+body.dark-mode .store-links a{background:rgba(255,255,255,.04);border-color:var(--line)}
+.pin-feed-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pin-card .pin-thumb{aspect-ratio:2/3;background:#d7d0c3}
+.pin-card h3{font-size:1.1rem;margin:0 0 8px}
+.pin-fallback{display:flex;align-items:center;justify-content:center;min-height:240px;padding:20px;border-radius:26px;border:1px dashed var(--line-strong);text-align:center}
+.pagination{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:8px 0 0}
+.pagination a{padding:13px 18px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.55);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;box-shadow:var(--shadow-sm)}
+body.dark-mode .pagination a{background:rgba(255,255,255,.04);border-color:var(--line)}
+.pagination a:hover{background:var(--accent-grad);border-color:transparent;color:#fff}
+.infinite-sentinel{height:10px}
+.footer{margin-top:60px;padding:60px 0 28px;background:linear-gradient(180deg,rgba(18,16,14,.98),rgba(12,10,9,.98));color:#f4ede4;position:relative;overflow:hidden}
+.footer:before{content:"";position:absolute;inset:auto -10% -45% auto;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(212,176,122,.16),transparent 70%)}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .9fr 1fr;gap:24px;position:relative;z-index:1}
+.footer-card{padding:24px;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}
+.footer h2,.footer h3,.footer h4{color:#fff}
+.footer p,.footer a,.footer span{color:rgba(255,255,255,.72)}
+.footer-preview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.footer-preview{border-radius:18px;aspect-ratio:2/3;background:#3b3026}
+.footer-bottom{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.86rem;color:rgba(255,255,255,.58)}
+.floating-share{position:fixed;left:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:1000}
+.floating-share a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:var(--shadow-md)}
+.back-to-top{position:fixed;right:24px;bottom:24px;z-index:1200;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--accent-grad);color:#fff;box-shadow:0 20px 40px rgba(169,131,73,.38);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.hide-item{display:none!important}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;border:0!important;white-space:nowrap!important}
+@media (max-width:1260px){.main-wrapper{gap:28px}.sidebar-area{width:300px;flex-basis:300px}.product-grid,.pin-feed-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.beauty-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1120px){.hero-grid{grid-template-columns:1fr}.hero-media{min-height:560px}.hero-side{grid-template-columns:repeat(2,minmax(0,1fr))}.main-wrapper{flex-direction:column}.sidebar-area{width:100%;flex-basis:auto}.sidebar{position:static}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.editor-grid,.trend-grid,.inline-shop-grid,.related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:920px){.nav-menu{position:absolute;top:calc(100% + 10px);left:22px;right:22px;flex-direction:column;align-items:stretch;gap:4px;padding:14px;border-radius:28px;background:rgba(255,252,246,.98);box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.72);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,visibility .25s ease,transform .25s ease}body.dark-mode .nav-menu{background:rgba(21,18,16,.98);border-color:var(--line)}.nav-menu.active{opacity:1;visibility:visible;transform:translateY(0)}.menu-toggle{display:flex}.main-nav{position:relative}.header-actions .social-link{display:none}.product-grid,.pin-feed-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.floating-share{display:none}}
+@media (max-width:720px){.header-inner{min-height:74px}.brand-wordmark{font-size:1.34rem}.brand-tagline{display:none}.hero-copy{padding:28px}.hero-media{min-height:420px}.hero-side{grid-template-columns:1fr}.editor-grid,.trend-grid,.beauty-grid,.inline-shop-grid,.related-grid,.footer-grid{grid-template-columns:1fr}.section-shell,.post-article,.sidebar-widget,.footer-card{padding:20px}.search-form{flex-direction:column;border-radius:28px}.search-form button{height:52px}.social-share{gap:8px}.share-btn{flex:1 1 calc(50% - 8px)}}
+@media (max-width:560px){.container{padding:0 16px}.hero{border-radius:28px}.hero-title{font-size:2.1rem}.pinterest-grid{columns:1}.product-grid,.pin-feed-grid{grid-template-columns:1fr}.affiliate-promo{grid-template-columns:1fr}.share-btn{flex:1 1 100%}.icon-btn,.social-link,.menu-toggle{width:42px;height:42px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,:before,:after{animation:none!important;transition:none!important}}
+    ]]></b:skin>
+  </head>
+  <body expr:class='data:blog.pageType == "item" ? "page-item" : "page-list"'>
+    <div class='page-glow'/>
+    <div class='noise-overlay'/>
+    <div class='progress-bar' id='scroll-progress'/>
+    <div class='search-overlay' id='search-overlay'>
+      <div class='search-shell'>
+        <button aria-label='Close search' class='search-close' id='search-close' type='button'>
+          <svg aria-hidden='true' fill='none' height='20' viewBox='0 0 24 24' width='20'><path d='M6 6l12 12M18 6L6 18' stroke='currentColor' stroke-linecap='round' stroke-width='2'/></svg>
+        </button>
+        <form action='/search' class='search-form' method='get'>
+          <label class='visually-hidden' for='site-search'>Search</label>
+          <input id='site-search' name='q' placeholder='Search fashion, beauty, styling, luxury edits...' type='search'/>
+          <button type='submit'>Search</button>
+        </form>
+      </div>
+    </div>
+    <div class='announcement-bar'>Luxury fashion, Pinterest-worthy edits, affiliate discoveries, and premium style inspiration.</div>
+    <header class='site-header'>
+      <div class='container header-inner'>
+        <a class='logo-wrap' expr:href='data:blog.homepageUrl'>
+          <span class='logo-mark'>
+            <svg aria-hidden='true' fill='none' height='20' viewBox='0 0 24 24' width='20'><path d='M12 3c4.418 0 8 3.582 8 8 0 3.352-2.061 6.221-4.985 7.414L14.2 21h-2.8l.814-2.586A7.998 7.998 0 0 1 4 11c0-4.418 3.582-8 8-8Z' fill='currentColor' fill-opacity='.14'/><path d='M12.2 7.1c-2.487 0-4.1 1.79-4.1 3.862 0 1.06.4 2.003 1.259 2.354.14.058.265.002.305-.153.028-.107.093-.377.122-.49.04-.153.024-.206-.086-.336-.24-.283-.393-.65-.393-1.17 0-1.509 1.13-2.862 2.944-2.862 1.605 0 2.488.98 2.488 2.288 0 1.72-.761 3.172-1.89 3.172-.624 0-1.09-.516-.94-1.149.179-.754.524-1.568.524-2.113 0-.488-.262-.896-.804-.896-.638 0-1.151.66-1.151 1.543 0 .563.19.944.19.944l-.768 3.253c-.228.964-.034 2.147-.018 2.267.01.071.1.088.142.034.06-.08.837-1.037 1.1-1.992.075-.27.43-1.672.43-1.672.212.405.832.761 1.492.761 1.964 0 3.295-1.792 3.295-4.19 0-1.813-1.538-3.49-3.878-3.49Z' fill='currentColor'/></svg>
+          </span>
+          <span class='logo-copy'><span class='brand-wordmark'>Apsariel</span><span class='brand-tagline'>Premium Women Fashion</span></span>
+        </a>
+        <nav class='main-nav'>
+          <button aria-label='Open menu' class='icon-btn menu-toggle' id='menu-toggle' type='button'><span/><span/><span/></button>
+          <ul class='nav-menu' id='nav-menu'>
+            <li><a class='nav-link' expr:href='data:blog.homepageUrl'>Home</a></li>
+            <li><a class='nav-link' href='/search/label/Fashion'>Fashion</a></li>
+            <li><a class='nav-link' href='/search/label/Beauty'>Beauty</a></li>
+            <li><a class='nav-link' href='#shop'>Shop</a></li>
+            <li><a class='nav-link' href='/search/label/Trends'>Trends</a></li>
+            <li><a class='nav-link' href='#about'>About</a></li>
+          </ul>
+        </nav>
+        <div class='header-actions'>
+          <button aria-label='Open search' class='icon-btn' id='search-toggle' type='button'><svg aria-hidden='true' fill='none' height='18' viewBox='0 0 24 24' width='18'><circle cx='11' cy='11' r='6.5' stroke='currentColor' stroke-width='2'/><path d='M16 16l5 5' stroke='currentColor' stroke-linecap='round' stroke-width='2'/></svg></button>
+          <a aria-label='Apsariel on Pinterest' class='social-link' href='https://pinterest.com/apsariel01' rel='noopener noreferrer' target='_blank'><svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12.017 2C6.493 2 3 5.68 3 10.79c0 3.243 1.844 5.086 2.956 5.086.463 0 .733-1.288.733-1.65 0-.433-1.107-1.337-1.107-3.126 0-3.746 2.845-6.39 6.513-6.39 3.16 0 5.493 1.796 5.493 5.086 0 2.46-.99 7.09-4.193 7.09-1.158 0-2.084-.86-1.84-2.047.333-1.41.98-2.93.98-4.439 0-2.59-3.664-2.12-3.664 1.006 0 .66.087 1.395.38 1.995-.55 2.37-1.673 5.91-1.673 8.33 0 .75.107 1.49.164 2.24.108.118.053.107.21.046 1.523-2.09 1.995-5.146 2.39-7.63.214.4 1.626 1.225 2.425 1.225 3.709 0 5.37-3.637 5.37-6.97C21.93 5.41 17.879 2 12.017 2Z'/></svg></a>
+          <a aria-label='Apsariel on Instagram' class='social-link' href='https://instagram.com/apsariel01' rel='noopener noreferrer' target='_blank'><svg aria-hidden='true' fill='none' height='18' viewBox='0 0 24 24' width='18'><rect height='15' rx='5' stroke='currentColor' stroke-width='2' width='15' x='4.5' y='4.5'/><circle cx='12' cy='12' r='3.5' stroke='currentColor' stroke-width='2'/><circle cx='17.3' cy='6.7' fill='currentColor' r='1'/></svg></a>
+          <button aria-label='Toggle dark mode' class='icon-btn' id='theme-toggle' type='button'><svg aria-hidden='true' fill='none' height='18' viewBox='0 0 24 24' width='18'><path d='M20 15.5A8.5 8.5 0 0 1 8.5 4a8.5 8.5 0 1 0 11.5 11.5Z' fill='currentColor'/></svg></button>
+        </div>
+      </div>
+    </header>
+    <b:if cond='data:blog.pageType == "item"'>
+      <div class='floating-share' id='floating-share'>
+        <a aria-label='Share to Pinterest' class='share-btn pinterest js-share-pinterest' href='#'><svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12.017 2C6.493 2 3 5.68 3 10.79c0 3.243 1.844 5.086 2.956 5.086.463 0 .733-1.288.733-1.65 0-.433-1.107-1.337-1.107-3.126 0-3.746 2.845-6.39 6.513-6.39 3.16 0 5.493 1.796 5.493 5.086 0 2.46-.99 7.09-4.193 7.09-1.158 0-2.084-.86-1.84-2.047.333-1.41.98-2.93.98-4.439 0-2.59-3.664-2.12-3.664 1.006 0 .66.087 1.395.38 1.995-.55 2.37-1.673 5.91-1.673 8.33 0 .75.107.49.164 2.24.108.118.053.107.21.046 1.523-2.09 1.995-5.146 2.39-7.63.214.4 1.626 1.225 2.425 1.225 3.709 0 5.37-3.637 5.37-6.97C21.93 5.41 17.879 2 12.017 2Z'/></svg></a>
+        <a aria-label='Share to Facebook' class='share-btn facebook js-share-facebook' href='#'><svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M13.5 21v-7h2.3l.4-3h-2.7V9.2c0-.86.24-1.45 1.47-1.45H16.3V5.07c-.24-.03-1.04-.07-1.97-.07-1.95 0-3.28 1.19-3.28 3.37V11H8.8v3h2.25v7h2.45Z'/></svg></a>
+        <a aria-label='Share to X' class='share-btn twitter js-share-twitter' href='#'><svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M18.9 3H21l-4.58 5.24L21.8 21h-4.22l-3.3-4.32L10.5 21H8.4l4.9-5.6L3 3h4.33l2.98 3.9L13.7 3h2.1Zm-1.48 15.43h1.16L6.7 5.48H5.45l11.97 12.95Z'/></svg></a>
+      </div>
+    </b:if>
+    <main class='site-main'>
+      <div class='container'>
+        <div class='main-wrapper'>
+          <div class='content-area'>
+            <b:section class='main' id='main' name='Main' showaddelement='no'>
+              <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+                <b:includable id='main'>
+                  <b:if cond='data:blog.pageType == "item"'>
+                    <b:loop values='data:posts' var='post'>
+                      <script type='application/ld+json'>
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "BlogPosting",
+                          "mainEntityOfPage": "<data:post.url/>",
+                          "headline": "<data:post.title.jsonEscaped/>",
+                          "description": "<data:blog.metaDescription.jsonEscaped/>",
+                          "image": "<b:if cond='data:post.featuredImage'><b:eval expr='resizeImage(data:post.featuredImage, 1600, &quot;16:10&quot;)'/></b:if>",
+                          "datePublished": "<data:post.timestampISO8601/>",
+                          "dateModified": "<data:post.lastUpdatedISO8601/>",
+                          "author": {
+                            "@type": "Person",
+                            "name": "<data:post.author.jsonEscaped/>"
+                          },
+                          "publisher": {
+                            "@type": "Organization",
+                            "name": "Apsariel"
+                          },
+                          "articleBody": "<data:post.body.jsonEscaped/>"
+                        }
+                      </script>
+                      <article class='post-article reveal' itemscope='itemscope' itemtype='https://schema.org/BlogPosting'>
+                        <header class='post-header'>
+                          <b:if cond='data:post.labels'>
+                            <b:loop values='data:post.labels' var='label' index='i'><b:if cond='data:i == 0'><a class='card-label' expr:href='data:label.url'><data:label.name/></a></b:if></b:loop>
+                          </b:if>
+                          <h1 itemprop='headline'><data:post.title/></h1>
+                          <div class='meta-row'><span itemprop='author'><data:post.author/></span><time expr:datetime='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></time><b:if cond='data:post.numComments'><a expr:href='data:post.url + "#comments"'><data:post.numComments/> comments</a></b:if></div>
+                        </header>
+                        <b:if cond='data:post.featuredImage'>
+                          <div class='post-featured-image'>
+                            <img decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1600, "16:10")' loading='eager' itemprop='image'/>
+                            <button aria-label='Save to Pinterest' class='pin-it-button' expr:data-pin-description='data:post.title' expr:data-pin-url='data:post.url' onclick='pinThis(this)' type='button'><svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12.017 2C6.493 2 3 5.68 3 10.79c0 3.243 1.844 5.086 2.956 5.086.463 0 .733-1.288.733-1.65 0-.433-1.107-1.337-1.107-3.126 0-3.746 2.845-6.39 6.513-6.39 3.16 0 5.493 1.796 5.493 5.086 0 2.46-.99 7.09-4.193 7.09-1.158 0-2.084-.86-1.84-2.047.333-1.41.98-2.93.98-4.439 0-2.59-3.664-2.12-3.664 1.006 0 .66.087 1.395.38 1.995-.55 2.37-1.673 5.91-1.673 8.33 0 .75.107.49.164 2.24.108.118.053.107.21.046 1.523-2.09 1.995-5.146 2.39-7.63.214.4 1.626 1.225 2.425 1.225 3.709 0 5.37-3.637 5.37-6.97C21.93 5.41 17.879 2 12.017 2Z'/></svg></button>
+                          </div>
+                        </b:if>
+                        <div class='affiliate-disclosure'><svg aria-hidden='true' fill='none' height='20' viewBox='0 0 24 24' width='20'><path d='M12 8v5' stroke='currentColor' stroke-linecap='round' stroke-width='2'/><circle cx='12' cy='16.5' fill='currentColor' r='1'/><path d='M10.29 3.86 1.82 18A2 2 0 0 0 3.53 21h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z' stroke='currentColor' stroke-width='2'/></svg><div>This article may include affiliate recommendations from trusted fashion marketplaces. If you purchase through these links, Apsariel may earn a commission at no extra cost to you.</div></div>
+                        <div class='post-body' itemprop='articleBody'><data:post.body/></div>
+                        <section class='homepage-section' id='shop'>
+                          <div class='section-shell reveal'>
+                            <div class='section-head'><div><span class='mini-kicker'>Shop The Edit</span><h2 class='section-title'>Luxury affiliate placements designed for high-intent readers.</h2><p>Use these showcase cards inside fashion posts, seasonal roundups, and style guides to convert Pinterest and search traffic into affiliate clicks.</p></div></div>
+                            <div class='inline-shop-grid'>
+                              <article class='product-card' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Rose drape maxi dress' loading='lazy' src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Women Dresses</span><h3 itemprop='name'>Rose Drape Maxi Dress</h3><p itemprop='description'>Fluid satin drape, event-ready silhouette, and editorial styling appeal.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹4,999</span></span><span class='old-price'>₹6,999</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article>
+                              <article class='product-card' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Blush embroidered kurta set' loading='lazy' src='https://images.unsplash.com/photo-1583391733981-8494563d5820?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Kurtas</span><h3 itemprop='name'>Blush Embroidered Kurta Set</h3><p itemprop='description'>Soft blush occasionwear with elevated embroidery and festive polish.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹3,199</span></span><span class='old-price'>₹4,499</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article>
+                              <article class='product-card' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Structured beige handbag' loading='lazy' src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Handbags</span><h3 itemprop='name'>Structured Mini Top Handle Bag</h3><p itemprop='description'>Clean, neutral, premium-looking handbag for modern luxury styling.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹2,899</span></span><span class='old-price'>₹3,999</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article>
+                            </div>
+                          </div>
+                        </section>
+                        <div class='social-share'><span class='label'>Share this post</span><a class='share-btn pinterest js-share-pinterest' href='#'>Pinterest</a><a class='share-btn facebook js-share-facebook' href='#'>Facebook</a><a class='share-btn twitter js-share-twitter' href='#'>X</a><a class='share-btn whatsapp js-share-whatsapp' href='#'>WhatsApp</a></div>
+                        <section class='homepage-section related-posts'><div class='section-shell reveal'><div class='section-head'><div><span class='mini-kicker'>Related Reads</span><h2 class='section-title'>More Apsariel inspiration for the same moodboard.</h2></div></div><div class='related-grid' id='related-grid'><div class='pin-fallback'>Related posts will load automatically from the same category.</div></div></div></section>
+                        <section class='comments-section' id='comments'>
+                          <div class='comment-top'><div><span class='mini-kicker'>Comments</span><h3 class='section-title'>Join the conversation</h3></div><b:if cond='data:post.allowComments'><a class='comment-btn' expr:href='data:post.addCommentUrl'>Leave a Comment</a></b:if></div>
+                          <b:if cond='data:post.allowComments'>
+                            <b:if cond='data:post.comments'><b:loop values='data:post.comments' var='comment'><article class='comment'><div class='comment-head'><span class='comment-author'><data:comment.author/></span><time><data:comment.timestamp/></time></div><div class='comment-body'><data:comment.body/></div></article></b:loop><b:else/><p>No comments yet. Be the first to share your thoughts.</p></b:if>
+                          <b:else/>
+                            <p>Comments are closed for this post.</p>
+                          </b:if>
+                        </section>
+                      </article>
+                    </b:loop>
+                  <b:else/>
+                    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+                      <b:with value='data:posts[0]' var='featured'>
+                        <section class='hero reveal'>
+                          <div class='hero-grid'>
+                            <div class='hero-media'>
+                              <b:if cond='data:featured.featuredImage'><img decoding='async' expr:alt='data:featured.title' expr:src='resizeImage(data:featured.featuredImage, 1800, "16:10")' loading='eager'/><b:else/><img alt='Apsariel featured fashion editorial' decoding='async' loading='eager' src='https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=1800&amp;q=80'/></b:if>
+                              <div class='hero-copy'>
+                                <b:if cond='data:featured.labels'><b:loop values='data:featured.labels' var='label' index='i'><b:if cond='data:i == 0'><a class='eyebrow' expr:href='data:label.url'><data:label.name/></a></b:if></b:loop><b:else/><span class='eyebrow'>Featured Editorial</span></b:if>
+                                <h1 class='hero-title'><data:featured.title/></h1>
+                                <p class='hero-desc'><b:eval expr='snippet(data:featured.body, {length: 180, links: false, linebreaks: false})'/></p>
+                                <div class='button-row'><a class='primary-btn' expr:href='data:featured.url'>Read More</a><a class='secondary-btn' href='#shop'>Shop the Look</a></div>
+                              </div>
+                            </div>
+                            <div class='hero-side'>
+                              <div class='hero-panel'><span class='mini-kicker'>Editor's Picks</span><h3>Premium fashion discovery designed for Pinterest saves, Instagram clicks, and SEO growth.</h3><p>Apsariel blends magazine-style storytelling, luxury feminine visuals, and high-converting product showcases for fashion readers who love aspirational content.</p></div>
+                              <div class='hero-panel'><span class='mini-kicker'>Built to Scale</span><div class='stats-row'><div class='stat-card'><strong>3x</strong><span>Pinterest-first visual hierarchy with vertical imagery.</span></div><div class='stat-card'><strong>Fast</strong><span>Lazy-loaded visuals, lightweight interactions, and clean markup.</span></div><div class='stat-card'><strong>SEO</strong><span>Structured metadata, article-first design, and affiliate-ready layouts.</span></div></div></div>
+                              <div class='hero-panel'><span class='mini-kicker'>Luxury Palette</span><p>Soft beige, white, nude neutrals, and warm gold accents echo the mood of premium fashion editorials and high-end e-commerce.</p></div>
+                            </div>
+                          </div>
+                        </section>
+                      </b:with>
+                      <section class='homepage-section'><div class='section-shell reveal'><div class='section-head'><div><span class='mini-kicker'>Trending Fashion</span><h2 class='section-title'>A moodboard of soft structure, elevated silhouettes, and high-save luxury looks.</h2><p>Use these spotlight sections to funnel homepage visitors into fashion categories, style guides, and affiliate shopping paths.</p></div></div><div class='trend-grid'><a class='trend-card' href='/search/label/Fashion'><img alt='Neutral tailoring editorial' loading='lazy' src='https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Fashion</span><h3>Modern capsule dressing for women who love polished minimalism.</h3></span></a><a class='trend-card' href='/search/label/Beauty'><img alt='Luxury beauty essentials' loading='lazy' src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Beauty</span><h3>Glow-focused beauty finds, accessories, and feminine finishing touches.</h3></span></a><a class='trend-card' href='/search/label/Trends'><img alt='Pinterest inspired style trends' loading='lazy' src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Trends</span><h3>Style signals lifted from Pinterest moodboards and viral save-worthy edits.</h3></span></a></div></div></section>
+                      <section class='homepage-section'><div class='section-shell reveal'><div class='section-head'><div><span class='mini-kicker'>Editor's Picks</span><h2 class='section-title'>Curated homepage spots for prestige storytelling and affiliate promotions.</h2><p>These premium blocks are perfect for hero offers, category launches, seasonal edits, and digital fashion products.</p></div></div><div class='editor-grid'><a class='editor-card' href='/search/label/Fashion'><img alt='Luxury dress edit' loading='lazy' src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Luxury Dresses</span><h3>Occasion-ready edits with dramatic drape and editorial softness.</h3></span></a><a class='editor-card' href='/search/label/Beauty'><img alt='Beauty essentials moodboard' loading='lazy' src='https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Beauty Essentials</span><h3>Glow-up staples, luxe beauty accessories, and polished finishing pieces.</h3></span></a><a class='editor-card' href='#shop'><img alt='Digital fashion products' loading='lazy' src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Digital Products</span><h3>Downloadable style guides, pin templates, and fashion planning tools.</h3></span></a></div></div></section>
+                    </b:if>
+                    <b:if cond='data:blog.pageType == "archive"'><div class='archive-header reveal'><span class='mini-kicker'>Archive</span><h1><data:blog.pageTitle/></h1><p>Browse elegant fashion stories, beauty insights, shopping edits, and Pinterest-inspired content across the Apsariel archive.</p></div></b:if>
+                    <section class='homepage-section'><div class='section-shell reveal'><div class='section-head'><div><span class='mini-kicker'>Latest Stories</span><h2 class='section-title'>A Pinterest-style masonry stream for blog posts and trend-driven discovery.</h2><p>Designed for visual scanning, strong click-throughs, and effortless reading across desktop, tablet, and mobile.</p></div></div><div class='post-feed-wrap js-post-feed pinterest-grid'><b:loop values='data:posts' var='post' index='i'><b:if cond='!(data:blog.url == data:blog.homepageUrl and data:i == 0)'><article class='post-card reveal'><a class='post-thumb' expr:href='data:post.url'><b:if cond='data:post.featuredImage'><img decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 900, "2:3")' loading='lazy'/><b:else/><img alt='Apsariel blog post placeholder' decoding='async' loading='lazy' src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></b:if><button aria-label='Save to Pinterest' class='pin-it-button' expr:data-pin-description='data:post.title' expr:data-pin-url='data:post.url' onclick='pinThis(this)' type='button'><svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12.017 2C6.493 2 3 5.68 3 10.79c0 3.243 1.844 5.086 2.956 5.086.463 0 .733-1.288.733-1.65 0-.433-1.107-1.337-1.107-3.126 0-3.746 2.845-6.39 6.513-6.39 3.16 0 5.493 1.796 5.493 5.086 0 2.46-.99 7.09-4.193 7.09-1.158 0-2.084-.86-1.84-2.047.333-1.41.98-2.93.98-4.439 0-2.59-3.664-2.12-3.664 1.006 0 .66.087 1.395.38 1.995-.55 2.37-1.673 5.91-1.673 8.33 0 .75.107.49.164 2.24.108.118.053.107.21.046 1.523-2.09 1.995-5.146 2.39-7.63.214.4 1.626 1.225 2.425 1.225 3.709 0 5.37-3.637 5.37-6.97C21.93 5.41 17.879 2 12.017 2Z'/></svg></button></a><div class='post-body-card'><b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label' index='li'><b:if cond='data:li == 0'><a class='card-label' expr:href='data:label.url'><data:label.name/></a></b:if></b:loop><b:else/><span class='card-label'>Apsariel Edit</span></b:if><h2><a expr:href='data:post.url'><data:post.title/></a></h2><p class='excerpt'><b:eval expr='snippet(data:post.body, {length: 150, links: false, linebreaks: false})'/></p><div class='meta-row'><span><data:post.timestamp/></span><b:if cond='data:post.numComments'><span><data:post.numComments/> comments</span></b:if></div><div class='button-row' style='margin-top:16px'><a class='read-btn' expr:href='data:post.url'>Read Article</a></div></div></article></b:if></b:loop></div><div class='pagination' id='pagination'><b:if cond='data:newerPageUrl'><a class='newer-link' expr:href='data:newerPageUrl'><data:newerPageTitle/></a></b:if><b:if cond='data:olderPageUrl'><a class='older-link' expr:href='data:olderPageUrl' id='load-more-link'><data:olderPageTitle/></a></b:if></div><div class='infinite-sentinel' id='infinite-sentinel'/></div></section>
+                    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+                      <section class='homepage-section' id='shop'><div class='section-shell reveal'><div class='section-head'><div><span class='mini-kicker'>Amazon Fashion Finds</span><h2 class='section-title'>Premium affiliate product showcase with category filters and luxe cards.</h2><p>Built to support deep catalogs, affiliate links, digital product launches, and category-specific shopping edits.</p></div></div><div class='filter-row' id='product-filters'><button class='filter-btn active' data-filter='all' type='button'>All Products</button><button class='filter-btn' data-filter='dresses' type='button'>Women Dresses</button><button class='filter-btn' data-filter='kurtas' type='button'>Kurtas</button><button class='filter-btn' data-filter='jewelry' type='button'>Jewelry</button><button class='filter-btn' data-filter='handbags' type='button'>Handbags</button><button class='filter-btn' data-filter='beauty' type='button'>Beauty</button><button class='filter-btn' data-filter='accessories' type='button'>Accessories</button></div><div class='product-grid' id='product-grid'><article class='product-card' data-category='dresses' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Rose Drape Maxi Dress' loading='lazy' src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Women Dresses</span><h3 itemprop='name'>Rose Drape Maxi Dress</h3><p itemprop='description'>Luxury satin drape with event-ready elegance and a high-save editorial silhouette.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹4,999</span></span><span class='old-price'>₹6,999</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article><article class='product-card' data-category='dresses' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Ivory Pleated Midi Dress' loading='lazy' src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Women Dresses</span><h3 itemprop='name'>Ivory Pleated Midi Dress</h3><p itemprop='description'>Clean lines, sculpted pleats, and effortless luxury for polished daytime styling.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹3,899</span></span><span class='old-price'>₹5,199</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article><article class='product-card' data-category='kurtas' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Blush Embroidered Kurta Set' loading='lazy' src='https://images.unsplash.com/photo-1583391733981-8494563d5820?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Kurtas</span><h3 itemprop='name'>Blush Embroidered Kurta Set</h3><p itemprop='description'>Soft festive blush tones with refined embroidery and wedding-guest appeal.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹3,199</span></span><span class='old-price'>₹4,499</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article><article class='product-card' data-category='jewelry' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Rose Gold Layered Necklace' loading='lazy' src='https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Jewelry</span><h3 itemprop='name'>Rose Gold Layered Necklace</h3><p itemprop='description'>A polished jewelry staple that instantly softens and elevates neutral wardrobes.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹1,899</span></span><span class='old-price'>₹2,699</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article><article class='product-card' data-category='handbags' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Structured Mini Top Handle Bag' loading='lazy' src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Handbags</span><h3 itemprop='name'>Structured Mini Top Handle Bag</h3><p itemprop='description'>Creamy beige structure with polished hardware for a luxury-coded finish.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹2,899</span></span><span class='old-price'>₹3,999</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article><article class='product-card' data-category='beauty' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Beauty essentials flatlay' loading='lazy' src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Beauty Products</span><h3 itemprop='name'>Radiance Beauty Edit</h3><p itemprop='description'>Glow-centric everyday essentials for soft glam routines and polished beauty content.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹2,299</span></span><span class='old-price'>₹3,099</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article><article class='product-card' data-category='accessories' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Soft Beige Heeled Mules' loading='lazy' src='https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Accessories</span><h3 itemprop='name'>Soft Beige Heeled Mules</h3><p itemprop='description'>Capsule wardrobe footwear with minimalist lines and premium neutral styling.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹2,599</span></span><span class='old-price'>₹3,499</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article><article class='product-card' data-category='accessories' itemscope='itemscope' itemtype='https://schema.org/Product'><div class='product-image'><img alt='Beige tailored co-ord set' loading='lazy' src='https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=80'/></div><div class='product-copy'><span class='card-label'>Accessories</span><h3 itemprop='name'>Beige Tailored Co-ord Set</h3><p itemprop='description'>Day-to-night soft tailoring with neutral polish for modern fashion discovery.</p><div class='price-row'><span class='price' itemprop='offers' itemscope='itemscope' itemtype='https://schema.org/Offer'><meta content='INR' itemprop='priceCurrency'/><span itemprop='price'>₹4,299</span></span><span class='old-price'>₹5,899</span></div><div class='store-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></article></div></div></section>
+                      <section class='homepage-section'><div class='section-shell reveal'><div class='section-head'><div><span class='mini-kicker'>Beauty Essentials</span><h2 class='section-title'>Soft-glam beauty inspiration and refined finishing details.</h2><p>Pair these sections with editorial guides, skincare routines, fragrance posts, and accessory roundups.</p></div></div><div class='beauty-grid'><a class='beauty-card' href='/search/label/Beauty'><img alt='Soft glam makeup' loading='lazy' src='https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Glow Ritual</span><h3>Soft-focus beauty routines that convert beautifully on Pinterest.</h3></span></a><a class='beauty-card' href='/search/label/Beauty'><img alt='Neutral perfume and beauty shelf' loading='lazy' src='https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Fragrance</span><h3>Neutral shelf styling and premium feminine fragrance content.</h3></span></a><a class='beauty-card' href='/search/label/Beauty'><img alt='Jewelry and beauty accessories' loading='lazy' src='https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Accessories</span><h3>Minimal jewelry, silk details, and rich visual finishing pieces.</h3></span></a><a class='beauty-card' href='/search/label/Beauty'><img alt='Luxury skincare flatlay' loading='lazy' src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&amp;fit=crop&amp;w=1200&amp;q=80'/><span class='overlay'><span class='eyebrow'>Skincare</span><h3>High-save skincare content with soft neutrals and elevated textures.</h3></span></a></div></div></section>
+                      <section class='homepage-section'><div class='section-shell reveal'><div class='section-head'><div><span class='mini-kicker'>Pinterest Inspired Looks</span><h2 class='section-title'>Automatic Pinterest content integration for fresh styling inspiration.</h2><p>Latest pins from the Apsariel Pinterest account can appear here automatically through RSS-powered loading with a Pinterest embed fallback.</p></div></div><div class='pin-feed-grid' id='pinterest-feed-grid'><div class='pin-fallback' id='pinterest-fallback'><div><p style='margin:0 0 10px'>Connecting to the Pinterest feed for <strong>@apsariel01</strong>.</p><a class='primary-btn' href='https://pinterest.com/apsariel01' rel='noopener noreferrer' target='_blank'>Open Pinterest</a></div></div></div><div class='section-shell' style='margin-top:18px;padding:18px' id='pinterest-embed-shell'><a data-pin-board-width='1000' data-pin-do='embedUser' data-pin-scale-height='240' data-pin-scale-width='80' href='https://www.pinterest.com/apsariel01/' rel='noopener noreferrer' target='_blank'>Follow Apsariel on Pinterest</a></div></div></section>
+                    </b:if>
+                  </b:if>
+                </b:includable>
+              </b:widget>
+            </b:section>
+          </div>
+          <aside class='sidebar-area'><div class='sidebar'><section class='sidebar-widget about-widget' id='about'><h2 class='widget-title'>About Apsariel</h2><div class='about-avatar'><img alt='Apsariel luxury fashion moodboard' loading='lazy' src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&amp;fit=crop&amp;w=400&amp;q=80'/></div><p>Apsariel is a premium women fashion website built for Pinterest traffic, Instagram discovery, SEO blog growth, affiliate storytelling, and digital fashion offers.</p></section><section class='sidebar-widget'><h2 class='widget-title'>Follow the Brand</h2><div class='follow-stack'><a class='follow-btn' href='https://pinterest.com/apsariel01' rel='noopener noreferrer' target='_blank'>Pinterest Follow Button</a><a class='follow-btn' href='https://instagram.com/apsariel01' rel='noopener noreferrer' target='_blank'>Instagram Follow Button</a></div></section><section class='sidebar-widget'><h2 class='widget-title'>Popular Posts</h2><div id='popular-posts-list'><div class='popular-item'><div class='popular-thumb'><img alt='Popular Apsariel story' loading='lazy' src='https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&amp;fit=crop&amp;w=300&amp;q=80'/></div><div class='popular-copy'><h4>Loading popular posts...</h4><p>Recent stories will appear here automatically.</p></div></div></div></section><section class='sidebar-widget'><h2 class='widget-title'>Categories</h2><div class='category-list'><a class='category-link' href='/search/label/Fashion'><span>Fashion</span><span>01</span></a><a class='category-link' href='/search/label/Beauty'><span>Beauty</span><span>02</span></a><a class='category-link' href='/search/label/Shop'><span>Shop</span><span>03</span></a><a class='category-link' href='/search/label/Trends'><span>Trends</span><span>04</span></a><a class='category-link' href='/search/label/Affiliate'><span>Affiliate Finds</span><span>05</span></a><a class='category-link' href='/search/label/Digital%20Products'><span>Digital Products</span><span>06</span></a></div></section><section class='sidebar-widget'><h2 class='widget-title'>Newsletter</h2><div class='newsletter-box'><p>Get curated drops, trend alerts, and premium fashion picks delivered in an elegant weekly edit.</p><form class='newsletter-form' id='newsletter-form'><label class='visually-hidden' for='newsletter-email'>Email</label><input id='newsletter-email' placeholder='Your email for curated drops' type='email'/><button class='newsletter-btn' type='submit'>Join the Edit</button></form></div></section><section class='sidebar-widget'><h2 class='widget-title'>Affiliate Product Widget</h2><div class='affiliate-widget'><div class='affiliate-promo'><img alt='Rose satin dress' loading='lazy' src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&amp;fit=crop&amp;w=400&amp;q=80'/><div><span class='card-label'>Featured Buy</span><h3 style='font-size:1.2rem;margin:8px 0'>Rose Drape Maxi Dress</h3><div class='price-row'><span class='price'>₹4,999</span><span class='old-price'>₹6,999</span></div><p style='font-size:.92rem'>Editorial drape, premium finish, and a Pinterest-ready silhouette.</p></div></div><div class='pill-links'><a href='https://www.amazon.in' rel='noopener noreferrer sponsored' target='_blank'>Amazon</a><a href='https://www.flipkart.com' rel='noopener noreferrer sponsored' target='_blank'>Flipkart</a></div></div></section></div></aside>
+        </div>
+      </div>
+    </main>
+    <footer class='footer'><div class='container'><div class='footer-grid'><section class='footer-card'><span class='mini-kicker'>About Apsariel</span><h2 class='section-title' style='margin-top:12px'>A luxury feminine destination for fashion-led discovery.</h2><p style='margin-top:14px'>Apsariel brings together premium blog storytelling, Pinterest-inspired visual curation, affiliate shopping, and digital style products in a modern editorial format.</p><div class='footer-social' style='margin-top:18px'><a class='follow-btn' href='https://pinterest.com/apsariel01' rel='noopener noreferrer' target='_blank'>Pinterest</a><a class='follow-btn' href='https://instagram.com/apsariel01' rel='noopener noreferrer' target='_blank'>Instagram</a></div></section><section class='footer-card'><span class='mini-kicker'>Quick Links</span><div class='footer-links' style='margin-top:18px'><a expr:href='data:blog.homepageUrl'>Home</a><a href='/search/label/Fashion'>Fashion</a><a href='/search/label/Beauty'>Beauty</a><a href='#shop'>Shop</a><a href='/search/label/Trends'>Trends</a><a href='#about'>About</a></div></section><section class='footer-card'><span class='mini-kicker'>Pinterest Feed Preview</span><div class='footer-preview-grid' style='margin-top:18px'><a class='footer-preview' href='https://pinterest.com/apsariel01' rel='noopener noreferrer' target='_blank'><img alt='Pinterest preview 1' loading='lazy' src='https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&amp;fit=crop&amp;w=300&amp;q=80'/></a><a class='footer-preview' href='https://pinterest.com/apsariel01' rel='noopener noreferrer' target='_blank'><img alt='Pinterest preview 2' loading='lazy' src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&amp;fit=crop&amp;w=300&amp;q=80'/></a><a class='footer-preview' href='https://pinterest.com/apsariel01' rel='noopener noreferrer' target='_blank'><img alt='Pinterest preview 3' loading='lazy' src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&amp;fit=crop&amp;w=300&amp;q=80'/></a></div></section><section class='footer-card'><span class='mini-kicker'>Instagram Feed Preview</span><div class='footer-preview-grid' style='margin-top:18px'><a class='footer-preview' href='https://instagram.com/apsariel01' rel='noopener noreferrer' target='_blank'><img alt='Instagram preview 1' loading='lazy' src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&amp;fit=crop&amp;w=300&amp;q=80'/></a><a class='footer-preview' href='https://instagram.com/apsariel01' rel='noopener noreferrer' target='_blank'><img alt='Instagram preview 2' loading='lazy' src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&amp;fit=crop&amp;w=300&amp;q=80'/></a><a class='footer-preview' href='https://instagram.com/apsariel01' rel='noopener noreferrer' target='_blank'><img alt='Instagram preview 3' loading='lazy' src='https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=300&amp;q=80'/></a></div><form class='newsletter-form' style='margin-top:18px'><label class='visually-hidden' for='footer-newsletter'>Email</label><input id='footer-newsletter' placeholder='Your email for curated drops' type='email'/><button class='newsletter-btn' type='button'>Newsletter Signup</button></form></section></div><div class='footer-bottom'>© <span id='copyright-year'>2026</span> Apsariel</div></div></footer>
+    <button aria-label='Back to top' class='back-to-top' id='back-to-top' type='button'><svg aria-hidden='true' fill='none' height='20' viewBox='0 0 24 24' width='20'><path d='M12 19V5M5 12l7-7 7 7' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/></svg></button>
+    <script async='async' defer='defer' src='https://assets.pinterest.com/js/pinit.js'/>
+    <script>
+//<![CDATA[
+(function() {
+  var doc = document;
+  var body = doc.body;
+  var menuToggle = doc.getElementById('menu-toggle');
+  var navMenu = doc.getElementById('nav-menu');
+  var searchToggle = doc.getElementById('search-toggle');
+  var searchOverlay = doc.getElementById('search-overlay');
+  var searchClose = doc.getElementById('search-close');
+  var themeToggle = doc.getElementById('theme-toggle');
+  var backToTop = doc.getElementById('back-to-top');
+  var progressBar = doc.getElementById('scroll-progress');
+  var sentinel = doc.getElementById('infinite-sentinel');
+  var productGrid = doc.getElementById('product-grid');
+  var productFilters = doc.getElementById('product-filters');
+  var pinterestGrid = doc.getElementById('pinterest-feed-grid');
+  var pinterestFallback = doc.getElementById('pinterest-fallback');
+  var pinterestEmbedShell = doc.getElementById('pinterest-embed-shell');
+  var popularList = doc.getElementById('popular-posts-list');
+  var newsletterForm = doc.getElementById('newsletter-form');
+  var feedContainer = doc.querySelector('.js-post-feed');
+  var isLoadingMore = false;
+
+  function qsa(selector, root) {
+    return Array.prototype.slice.call((root || doc).querySelectorAll(selector));
+  }
+
+  function setTheme(mode) {
+    body.classList.toggle('dark-mode', mode === 'dark');
+    try { localStorage.setItem('apsariel-theme', mode); } catch (err) {}
+  }
+
+  function restoreTheme() {
+    try {
+      var saved = localStorage.getItem('apsariel-theme');
+      if (saved) {
+        setTheme(saved);
+        return;
+      }
+    } catch (err) {}
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+  }
+
+  function updateProgress() {
+    if (!progressBar) return;
+    var scrollTop = window.pageYOffset || doc.documentElement.scrollTop;
+    var docHeight = doc.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+  }
+
+  function closeMenu() {
+    if (!navMenu || !menuToggle) return;
+    navMenu.classList.remove('active');
+    menuToggle.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
+
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.add('active');
+    body.classList.add('search-open');
+    var field = doc.getElementById('site-search');
+    if (field) setTimeout(function() { field.focus(); }, 120);
+  }
+
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.remove('active');
+    body.classList.remove('search-open');
+  }
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', function() {
+      var open = navMenu.classList.toggle('active');
+      menuToggle.classList.toggle('active', open);
+      body.classList.toggle('menu-open', open);
+    });
+    qsa('.nav-link', navMenu).forEach(function(link) { link.addEventListener('click', closeMenu); });
+  }
+  if (searchToggle) searchToggle.addEventListener('click', openSearch);
+  if (searchClose) searchClose.addEventListener('click', closeSearch);
+  if (searchOverlay) {
+    searchOverlay.addEventListener('click', function(event) {
+      if (event.target === searchOverlay) closeSearch();
+    });
+  }
+  doc.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeSearch();
+      closeMenu();
+    }
+  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      setTheme(body.classList.contains('dark-mode') ? 'light' : 'dark');
+    });
+  }
+  if (backToTop) {
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  function bindShareLinks() {
+    var url = window.location.href;
+    var title = doc.title;
+    var featuredImage = doc.querySelector('.post-featured-image img');
+    var media = featuredImage ? featuredImage.src : '';
+    qsa('.js-share-pinterest').forEach(function(link) {
+      link.href = 'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + '&media=' + encodeURIComponent(media) + '&description=' + encodeURIComponent(title);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+    qsa('.js-share-facebook').forEach(function(link) {
+      link.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+    qsa('.js-share-twitter').forEach(function(link) {
+      link.href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+    qsa('.js-share-whatsapp').forEach(function(link) {
+      link.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(title + ' ' + url);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+  }
+
+  window.pinThis = function(button) {
+    var container = button.closest('.post-thumb, .post-featured-image, .pin-thumb');
+    var image = container ? container.querySelector('img') : null;
+    var url = button.getAttribute('data-pin-url') || window.location.href;
+    var description = button.getAttribute('data-pin-description') || doc.title;
+    var media = image ? image.src : '';
+    window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(url) + '&media=' + encodeURIComponent(media) + '&description=' + encodeURIComponent(description), 'Pinterest', 'width=760,height=560');
+  };
+
+  function setupReveal(root) {
+    var items = qsa('.reveal', root);
+    if (!items.length) return;
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function(item) { item.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -30px 0px' });
+    items.forEach(function(item) { observer.observe(item); });
+  }
+
+  function bindProductFilters() {
+    if (!productGrid || !productFilters) return;
+    productFilters.addEventListener('click', function(event) {
+      var button = event.target.closest('button[data-filter]');
+      if (!button) return;
+      var filter = button.getAttribute('data-filter');
+      qsa('button', productFilters).forEach(function(btn) { btn.classList.toggle('active', btn === button); });
+      qsa('.product-card', productGrid).forEach(function(card) {
+        card.classList.toggle('hide-item', !(filter === 'all' || card.getAttribute('data-category') === filter));
+      });
+    });
+  }
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      var field = doc.getElementById('newsletter-email');
+      if (!field || !field.value) return;
+      field.value = '';
+      var note = doc.createElement('p');
+      note.textContent = 'Thanks for joining the Apsariel edit.';
+      note.style.marginTop = '12px';
+      newsletterForm.appendChild(note);
+      setTimeout(function() { if (note.parentNode) note.parentNode.removeChild(note); }, 3200);
+    });
+  }
+
+  function fetchPopularPosts() {
+    if (!popularList) return;
+    fetch('/feeds/posts/default?alt=json&max-results=5')
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        var entries = data.feed && data.feed.entry ? data.feed.entry : [];
+        if (!entries.length) return;
+        var html = '';
+        entries.slice(0, 5).forEach(function(entry) {
+          var title = entry.title && entry.title.$t ? entry.title.$t : 'Apsariel story';
+          var href = '#';
+          (entry.link || []).some(function(item) {
+            if (item.rel === 'alternate') {
+              href = item.href;
+              return true;
+            }
+            return false;
+          });
+          var image = entry.media$thumbnail && entry.media$thumbnail.url ? entry.media$thumbnail.url.replace('/s72-c/', '/w300-h380-p-k-no-nu/') : 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=300&q=80';
+          var date = entry.published && entry.published.$t ? new Date(entry.published.$t).toLocaleDateString() : '';
+          html += '<a class="popular-item" href="' + href + '"><span class="popular-thumb"><img alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy" src="' + image + '"/></span><span class="popular-copy"><h4>' + title + '</h4><p>' + date + '</p></span></a>';
+        });
+        popularList.innerHTML = html;
+      })
+      .catch(function() {});
+  }
+
+  function fetchRelatedPosts() {
+    var container = doc.getElementById('related-grid');
+    var labelTag = doc.querySelector('.post-header .card-label');
+    if (!container || !labelTag) return;
+    fetch('/feeds/posts/default/-/' + encodeURIComponent(labelTag.textContent.trim()) + '?alt=json&max-results=4')
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        var entries = data.feed && data.feed.entry ? data.feed.entry : [];
+        var current = window.location.href.replace(/\/$/, '');
+        var html = '';
+        entries.forEach(function(entry) {
+          var title = entry.title && entry.title.$t ? entry.title.$t : '';
+          var href = '';
+          (entry.link || []).some(function(item) {
+            if (item.rel === 'alternate') {
+              href = item.href;
+              return true;
+            }
+            return false;
+          });
+          if (!href || href.replace(/\/$/, '') === current) return;
+          var image = entry.media$thumbnail && entry.media$thumbnail.url ? entry.media$thumbnail.url.replace('/s72-c/', '/w700-h520-p-k-no-nu/') : 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80';
+          html += '<article class="related-card reveal is-visible"><a href="' + href + '"><div class="related-thumb"><img alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy" src="' + image + '"/></div><div class="related-copy"><h3>' + title + '</h3></div></a></article>';
+        });
+        container.innerHTML = html || '<div class="pin-fallback">No related posts found yet.</div>';
+      })
+      .catch(function() {});
+  }
+
+  function renderPinterestPins(items) {
+    if (!pinterestGrid || !items.length) return;
+    var html = '';
+    items.slice(0, 8).forEach(function(item) {
+      var title = item.title || item.description || 'Pinterest inspired look';
+      var link = item.link || 'https://pinterest.com/apsariel01';
+      var match = item.content ? item.content.match(/src="([^"]+)"/) : null;
+      var image = item.thumbnail || (item.enclosure && item.enclosure.link) || (match ? match[1] : '') || 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80';
+      html += '<article class="pin-card"><a href="' + link + '" rel="noopener noreferrer" target="_blank"><div class="pin-thumb"><img alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy" src="' + image + '"/><button aria-label="Save to Pinterest" class="pin-it-button" data-pin-url="' + link + '" data-pin-description="' + title.replace(/"/g, '&quot;') + '" onclick="pinThis(this)" type="button"><svg aria-hidden="true" fill="currentColor" height="18" viewBox="0 0 24 24" width="18"><path d="M12.017 2C6.493 2 3 5.68 3 10.79c0 3.243 1.844 5.086 2.956 5.086.463 0 .733-1.288.733-1.65 0-.433-1.107-1.337-1.107-3.126 0-3.746 2.845-6.39 6.513-6.39 3.16 0 5.493 1.796 5.493 5.086 0 2.46-.99 7.09-4.193 7.09-1.158 0-2.084-.86-1.84-2.047.333-1.41.98-2.93.98-4.439 0-2.59-3.664-2.12-3.664 1.006 0 .66.087 1.395.38 1.995-.55 2.37-1.673 5.91-1.673 8.33 0 .75.107.49.164 2.24.108.118.053.107.21.046 1.523-2.09 1.995-5.146 2.39-7.63.214.4 1.626 1.225 2.425 1.225 3.709 0 5.37-3.637 5.37-6.97C21.93 5.41 17.879 2 12.017 2Z"/></svg></button></div><div class="pin-copy"><span class="card-label">Pinterest</span><h3>' + title + '</h3><p>Tap through for the original pin, styling context, and related inspiration.</p></div></a></article>';
+    });
+    pinterestGrid.innerHTML = html;
+    if (pinterestEmbedShell) pinterestEmbedShell.style.display = 'none';
+  }
+
+  function fetchPinterestFeed() {
+    if (!pinterestGrid) return;
+    var rssUrl = encodeURIComponent('https://www.pinterest.com/apsariel01/feed.rss');
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=' + rssUrl)
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        if (data && data.items && data.items.length) {
+          renderPinterestPins(data.items);
+        } else if (pinterestFallback) {
+          pinterestFallback.innerHTML = '<div><p style="margin:0 0 10px">Pinterest embed preview is active below.</p><a class="primary-btn" href="https://pinterest.com/apsariel01" rel="noopener noreferrer" target="_blank">View Pinterest Profile</a></div>';
+        }
+      })
+      .catch(function() {
+        if (pinterestFallback) pinterestFallback.innerHTML = '<div><p style="margin:0 0 10px">Pinterest RSS could not load right now, so the Pinterest embed preview remains available below.</p><a class="primary-btn" href="https://pinterest.com/apsariel01" rel="noopener noreferrer" target="_blank">View Pinterest Profile</a></div>';
+      });
+  }
+
+  function loadMorePosts() {
+    if (isLoadingMore) return;
+    var olderLink = doc.getElementById('load-more-link');
+    if (!olderLink || !feedContainer) return;
+    isLoadingMore = true;
+    olderLink.textContent = 'Loading...';
+    fetch(olderLink.getAttribute('href'))
+      .then(function(response) { return response.text(); })
+      .then(function(html) {
+        var nextDoc = new DOMParser().parseFromString(html, 'text/html');
+        var newFeed = nextDoc.querySelector('.js-post-feed');
+        var nextPagination = nextDoc.getElementById('pagination');
+        if (newFeed) {
+          qsa('.post-card', newFeed).forEach(function(card) {
+            card.classList.add('reveal');
+            feedContainer.appendChild(card);
+          });
+          setupReveal(feedContainer);
+        }
+        var currentPagination = doc.getElementById('pagination');
+        if (currentPagination) currentPagination.innerHTML = nextPagination ? nextPagination.innerHTML : '';
+      })
+      .catch(function() {})
+      .finally(function() { isLoadingMore = false; });
+  }
+
+  if (sentinel && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) { if (entry.isIntersecting) loadMorePosts(); });
+    }, { rootMargin: '400px 0px 400px 0px' }).observe(sentinel);
+  }
+
+  window.addEventListener('scroll', function() {
+    if (backToTop) backToTop.classList.toggle('visible', window.pageYOffset > 380);
+    updateProgress();
+  }, { passive: true });
+
+  restoreTheme();
+  bindShareLinks();
+  bindProductFilters();
+  fetchPopularPosts();
+  fetchRelatedPosts();
+  fetchPinterestFeed();
+  setupReveal(doc);
+  updateProgress();
+  var year = doc.getElementById('copyright-year');
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
+//]]>
+    </script>
+  </body>
+</html>

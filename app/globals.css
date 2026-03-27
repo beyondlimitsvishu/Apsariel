@@ -1,0 +1,48 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-poppins), sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(230, 183, 169, 0.18), transparent 26%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.65), transparent 22%),
+    linear-gradient(180deg, #e9e5cd 0%, #f3eddf 48%, #f7f2ea 100%);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(230, 183, 169, 0.14), transparent 26%),
+    linear-gradient(180deg, #171211 0%, #110e0d 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: var(--font-playfair), serif;
+}
+
+* {
+  border-color: rgba(17, 17, 17, 0.08);
+}
+
+::selection {
+  background: rgba(230, 183, 169, 0.45);
+  color: #161211;
+}
