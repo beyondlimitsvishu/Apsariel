@@ -1,126 +1,71 @@
-# 🌸 Apsariel – Premium Fashion Discovery Platform
+# APSARIEL
 
-**Apsariel** is a modern Pinterest-inspired fashion discovery website that helps users explore trending women’s fashion products and purchase them through trusted e-commerce platforms.
+A production-ready luxury fashion discovery platform built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
 
-The platform curates stylish fashion finds from stores like **Amazon, Myntra, Flipkart, Ajio, and Meesho**, allowing users to easily discover trending outfits, beauty products, and accessories.
+## Highlights
 
-Built with modern web technologies and optimized for performance, SEO, and scalability.
+- Editorial homepage with animated hero, category showcases, trending rail, and Pinterest-style masonry feed
+- 100+ product catalog stored in `data/products.json`
+- Category pages, fashion and beauty landing pages, trending page, shop page, and detailed product pages
+- Affiliate-ready product model covering Amazon, Flipkart, Myntra, Ajio, and Meesho
+- Pinterest sync endpoint and merge layer for RSS or API-fed product ingestion
+- SEO coverage with metadata, Open Graph, Twitter cards, schema, sitemap, and robots
 
----
+## Stack
 
-## ✨ Features
+- Next.js 15 App Router
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- next-themes
 
-• Pinterest-style masonry product grid
-• Smooth UI animations using Framer Motion
-• Infinite scrolling product feed
-• Automatic Pinterest pin integration
-• Affiliate product redirection to e-commerce platforms
-• SEO optimized architecture
-• Responsive mobile-first design
-• Luxury fashion inspired UI/UX
-• Dark mode support
-• Product filtering by category
-• Fast image loading with Next.js optimization
+## Pinterest Sync
 
----
+Configure one of these environment variables to enable automatic Pinterest ingestion:
 
-## 🛍 Supported Stores
+- `PINTEREST_FEED_URL`
+- `PINTEREST_API_ENDPOINT`
 
-Products link to popular shopping platforms:
+Optional:
 
-* Amazon
-* Myntra
-* Flipkart
-* Ajio
-* Meesho
+- `PINTEREST_ACCESS_TOKEN`
 
-Users can discover products on **Apsariel** and purchase them directly from these stores.
+The sync route is available at `/api/pinterest-sync`, and synced products are merged into the catalog in `lib/products.ts`.
 
----
+## Project Structure
 
-## 🎨 Design Inspiration
+```text
+app/
+  about/
+  api/pinterest-sync/
+  beauty/
+  categories/[slug]/
+  fashion/
+  product/[slug]/
+  shop/
+  trending/
+components/
+  catalog/
+  layout/
+  providers/
+  ui/
+data/
+lib/
+public/images/
+sections/
+styles/
+types/
+```
 
-The UI design is inspired by:
+## Local Development
 
-* Pinterest product discovery
-* Vogue editorial style layouts
-* Net-a-Porter luxury fashion experience
+```bash
+npm install
+npm run dev
+```
 
-The goal is to create a **premium fashion browsing experience**.
+## Production Verification
 
----
-
-## ⚙️ Tech Stack
-
-**Framework**
-Next.js (App Router)
-
-**Language**
-TypeScript
-
-**Styling**
-Tailwind CSS
-
-**Animations**
-Framer Motion
-
-**Deployment**
-Vercel
-
-**Image Optimization**
-Next.js Image
-
----
-
-## 📂 Project Structure
-
-/app
-/components
-/sections
-/data
-/styles
-/public/images
-
-This modular architecture makes the platform **scalable and easy to maintain**.
-
----
-
-## 📈 SEO Optimization
-
-The website includes:
-
-* Meta tags
-* Open Graph tags
-* Structured data for products
-* Sitemap generation
-* Robots configuration
-* Fast page loading
-
-Optimized for search engines and social sharing.
-
----
-
-## 📌 Future Improvements
-
-* AI based fashion recommendations
-* User accounts and wishlists
-* Advanced product filters
-* Real-time Pinterest content sync
-* CMS based product management
-
----
-
-## 🌐 Social Links
-
-Pinterest
-https://pinterest.com/apsariel01
-
-Instagram
-https://instagram.com/apsariel01
-
----
-
-## © License
-
-© Apsariel
-All rights reserved.
+```bash
+npm run build
+```
